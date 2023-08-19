@@ -1,6 +1,10 @@
+import CustomRoutes from "./CustomRoutes";
+
 function App() {
   return (
-    <></>
+    <>
+      <CustomRoutes />
+    </>
   );
 }
 

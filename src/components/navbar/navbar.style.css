@@ -4,7 +4,7 @@ nav img.logo {
 
 nav.navbar {
   width: 100%;
-  height: 80px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,10 +19,11 @@ nav.navbar ul {
 
 nav.navbar ul li {
   color: #f3f3f3;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 400;
   float: left;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 nav.navbar ul li:not(:first-of-type) {

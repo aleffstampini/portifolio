@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 
 import logo from "../../assets/logo.png";
@@ -5,41 +6,45 @@ import logo from "../../assets/logo.png";
 import "./navbar.style.css";
 
 const NavBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <>
-      <header className="navbar-main">
-        <nav className="navbar container">
-          <img src={logo} className="logo" alt="Logo" />
-          <ul>
-            <li>
-              <HashLink smooth to="/#init" className="hashlink">
-                Início
+    <header className={`navbar-main ${isScrolled ? "navbar-main-scroll" : ""}`}>
+      <nav className="navbar container">
+        <img src={logo} className="logo" alt="Logo" />
+        <ul>
+          {[
+            { id: "inicio", label: "Início" },
+            { id: "quem-sou", label: "Quem Sou" },
+            { id: "o-que-faço", label: "O que faço" },
+            { id: "tecnologias", label: "Tecnologias"},
+            { id: "portifolio", label: "Portifólio" },
+            { id: "contatos", label: "Entre em Contato" },
+          ].map((item) => (
+            <li key={item.id}>
+              <HashLink smooth to={`/#${item.id}`} className="hashlink">
+                {item.label}
               </HashLink>
             </li>
-            <li>
-              <HashLink smooth to="/#aboutme" className="hashlink">
-                Sobre Mim
-              </HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#technologies" className="hashlink">
-                Tecnologias
-              </HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#projects" className="hashlink">
-                Projetos
-              </HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#contacts" className="hashlink">
-                Contatos
-              </HashLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </>
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 };
 

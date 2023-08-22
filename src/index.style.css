@@ -27,9 +27,9 @@ html {
     #301b5b,
     #321d59
   );
-  min-height: 100%;
   background-repeat: no-repeat;
-  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 body {

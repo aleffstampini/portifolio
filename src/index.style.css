@@ -11,7 +11,7 @@
   outline: none;
 }
 
-body {
+html {
   background-image: linear-gradient(
     to right top,
     #654ca1,
@@ -27,6 +27,12 @@ body {
     #301b5b,
     #321d59
   );
+  min-height: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+body {
   width: 100%;
 }
 

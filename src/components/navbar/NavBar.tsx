@@ -1,3 +1,5 @@
+import { HashLink } from 'react-router-hash-link';
+
 import logo from "../../assets/logo.png";
 
 import "./navbar.style.css";
@@ -9,19 +11,29 @@ const NavBar = () => {
         <img src={logo} className="logo" alt="Logo" />
         <ul>
           <li>
-            <span className="li-text">Início</span>
+            <HashLink smooth to="/#init" className="hashlink">
+              Início
+            </HashLink>
           </li>
           <li>
-            <span className="li-text">Sobre Mim</span>
+            <HashLink smooth to="/#aboutme" className="hashlink">
+              Sobre Mim
+            </HashLink>
           </li>
           <li>
-            <span className="li-text">Tecnologias</span>
+            <HashLink smooth to="/#technologies" className="hashlink">
+              Tecnologias
+            </HashLink>
           </li>
           <li>
-            <span className="li-text">Projetos</span>
+            <HashLink smooth to="/#projects" className="hashlink">
+              Projetos
+            </HashLink>
           </li>
           <li>
-            <span className="li-text">Contatos</span>
+            <HashLink smooth to="/#contacts" className="hashlink">
+              Contatos
+            </HashLink>
           </li>
         </ul>
       </nav>

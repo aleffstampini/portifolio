@@ -18,14 +18,17 @@ nav.navbar ul {
 }
 
 nav.navbar ul li {
-  color: #f3f3f3;
   font-size: 14px;
   font-weight: 400;
   float: left;
-  cursor: pointer;
+  /* cursor: pointer; */
   text-transform: uppercase;
 }
 
 nav.navbar ul li:not(:first-of-type) {
   margin: 0 0 0 20px;
+}
+
+.hashlink {
+  color: #f3f3f3;
 }
